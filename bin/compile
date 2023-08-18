@@ -1,7 +1,10 @@
 #!/bin/sh
 
-echo "-----> Custom Buildpack: Running pip install --no-deps -r requirements.txt"
+echo "-----> Custom Buildpack: Installing Python and packages"
 
-# Install the pip requirements without their dependencies
-pip install --no-deps -r "$BUILD_DIR/requirements.txt"
+# Install Python and required packages
+apt-get update
+apt-get install -y python3 python3-pip
 
+# Install Python packages from requirements.txt
+pip3 install --no-deps -r "$BUILD_DIR/requirements.txt"

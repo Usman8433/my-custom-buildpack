@@ -1,3 +1,2 @@
 #!/bin/sh
-echo "custom-buildpack"
-
+echo "custom-python-buildpack"
